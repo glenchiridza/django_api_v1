@@ -26,6 +26,9 @@ def test_view(request):
 #         return Response(data)
 
 class TestView(APIView):
+
+    permission_classes = (IsAuthenticated, )
+
     def get(self, request, *args, **kwargs):
         from core.models import Post
         query_set = Post.objects.all()

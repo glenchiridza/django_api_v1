@@ -14,14 +14,22 @@ def test_view(request):
     }
     return JsonResponse(data)
 
+#
+# class TestView(APIView):
+#     def get(self, request, *args, **kwargs):
+#         data = {
+#             'name': 'glen',
+#             'age': 23
+#         }
+#         return Response(data)
 
 class TestView(APIView):
     def get(self, request, *args, **kwargs):
-        data = {
-            'name': 'glen',
-            'age': 23
-        }
-        return Response(data)
+        from core.models import Post
+        query_set = Post.objects.all()
+        serializer = PostSerializer(query_set, many=True)
+
+        return Response(serializer.data)
 
     def post(self,request,*args,**kwargs):
         serializer = PostSerializer(data=request.data)

@@ -4,8 +4,11 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework import generics
 
 from .serializers import PostSerializer
+
+
 
 
 def test_view(request):
@@ -46,3 +49,7 @@ class TestView(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+
+# using generics
+
+class PostView(generics.GenericAPIView):

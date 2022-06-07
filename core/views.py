@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
+from rest_framework import mixins
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import generics
 
+from .models import Post
 from .serializers import PostSerializer
-
-
 
 
 def test_view(request):
@@ -29,8 +29,7 @@ def test_view(request):
 #         return Response(data)
 
 class TestView(APIView):
-
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):
         from core.models import Post
@@ -50,6 +49,17 @@ class TestView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors)
 
+
 # using generics
 
-class PostView(generics.GenericAPIView):
+class PostView(
+    mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    generics.GenericAPIView):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+    def get(self,request,*args,**kwargs):
+        return self.list(self,request,*args,**kwargs)
+
+

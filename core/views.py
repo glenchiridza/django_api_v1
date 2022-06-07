@@ -71,3 +71,10 @@ class PostView(
         return self.create(request,*args,**kwargs)
 
 
+class PostCreate(mixins.ListModelMixin, generics.CreateAPIView):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+    def get(self,request,*args,**kwargs):
+        return self.list(request,*args,**kwargs)
+

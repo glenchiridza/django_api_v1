@@ -59,22 +59,28 @@ class PostView(
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 
-    def get(self,request,*args,**kwargs):
-        return self.list(request,*args,**kwargs)
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
 
     # def perform_create(self, serializer):
     #     #put some custom logic in between the serializer being saved and method being called
     #     #eg send email
     #     serializer.save()
 
-    def post(self,request, *args, **kwargs):
-        return self.create(request,*args,**kwargs)
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
 
 
 class PostCreate(mixins.ListModelMixin, generics.CreateAPIView):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 
-    def get(self,request,*args,**kwargs):
-        return self.list(request,*args,**kwargs)
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
 
+
+# or
+
+class PostListCreateView(generics.ListCreateAPIView):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()

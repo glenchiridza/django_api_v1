@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+
 def test_view(request):
     data = {
         'name': 'glen',
@@ -13,7 +14,7 @@ def test_view(request):
 
 
 class TestView(APIView):
-    def get(self,request,*args,**kwargs):
+    def get(self, request, *args, **kwargs):
         data = {
             'name': 'glen',
             'age': 23

@@ -61,10 +61,10 @@ class StudentsProfileUpdateSerializer(serializers.ModelSerializer):
 
 class StudentsProfileRetrieveSerializer(serializers.ModelSerializer):
     # make readonly so that it cant be applicable for update with the rest of the other fields
-    department = serializers.CharField(max_length=5-, read_only=True)
+    department = serializers.CharField(max_length=50, read_only=True)
 
     class Meta:
         model = Student
         fields = (
-            'first_name','last_name','profile_image'
+            'first_name','last_name','profile_image',
         )

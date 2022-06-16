@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'allauth',
+    'django.contrib.sites',
+    'rest_auth.registration',
     'allauth.account',
     'corsheaders',
     'core',
+    'users',
 
 ]
 
@@ -56,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SITE_ID = 1
 ROOT_URLCONF = 'dresrf_api.urls'
 
 TEMPLATES = [

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4c77508-a7d0-4dc1-a50c-5da100049720" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dresrf_api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dresrf_api/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +48,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="780" y="156" width="426" height="486" key="FileChooserDialogImpl" timestamp="1655407791806">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="780" y="156" width="426" height="486" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1655407791806" />
     <state x="653" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1655405750635">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

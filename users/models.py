@@ -11,7 +11,7 @@ class Student(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     profile_image = models.ImageField(upload_to='profile_images', max_length=255, blank=True, null=True)
-    department = models.CharField(max_length=100)
+    department = models.CharField(max_length=50)
 
     def __str__(self):
         return self.user.username

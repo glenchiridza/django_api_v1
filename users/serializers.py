@@ -41,3 +41,19 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.save()
 
         adapter.save_user(request, user, self)
+
+        return user
+
+
+class CollaboratorProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Collaborator
+        fields = ('company_name', 'acronym', 'country', 'city',)
+
+
+class StudentsProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = (
+            'first_name', 'last_name', 'profile_image', 'department',
+        )
